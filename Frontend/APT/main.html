@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyonggi Apartment</title>
+
+    <script>
+        function local() {
+            var id = document.getElementById("id").value;
+            var pwd = document.getElementById("pwd").value;
+            
+            alert("아이디:" + id + ", 비밀번호: " + pwd);
+        }
+    </script>
+    
+</head>
+<body>
+    <form action="javascript:local();">
+		<table>
+			<tr>
+				<td><label>아이디: <input type="text" size="15" id="id"></label></td>
+				<td><label>비밀번호: <input type="password" size="15" id="pwd"></label></td>
+				<td><button type="button" onclick="login()">로그인</button></td>
+                <td><button type="button" onclick="location.href='join.html'">회원가입</button></td>
+			</tr>
+		</table>
+	</form>
+
+
+    <div class="nav">
+        <a href="main.html" id="logo">
+            <img src="../images/logo1.png" width="200px">
+        </a>
+
+        <ul id="menu">
+            <li><a href="main.html">홈</a></li>
+            <li><a href="management.html">관리사무소</a></li>
+            <li><a href="community">커뮤니티</a></li>
+            <li><a href="facility">시설이용</a></li>
+            <li><a href="information">정보마당</a></li>
+        </ul>
+    </div>
+</body>
+</html>
