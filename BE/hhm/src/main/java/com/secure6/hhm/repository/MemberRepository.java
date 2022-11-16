@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class MemberRepository {
 
     public Member save(Member member) throws SQLException {
-        String sql = "insert into Member(member_id, password, name) values (?, ?, ?)";
+        String sql = "insert into member(member_id, password, name) values (?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstat = null;
@@ -23,6 +23,7 @@ public class MemberRepository {
             pstat.setString(1, member.getMemberId());
             pstat.setString(2, member.getPassword());
             pstat.setString(3, member.getName());
+            pstat.executeUpdate();
             return member;
         } catch (SQLException e) {
             throw e;
