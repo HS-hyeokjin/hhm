@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: web-security.ceus91dlztiw.ap-northeast-2.rds.amazonaws.com:3306/apartment
-    username: admin
-    password: asdf1234
-    dirver-class-name: com.mysql.cj.jdbc.Driver

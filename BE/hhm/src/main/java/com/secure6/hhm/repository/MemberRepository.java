@@ -1,8 +1,7 @@
 package com.secure6.hhm.repository;
 
-import com.secure6.hhm.connection.ConnectionConst;
+import com.secure6.hhm.DTO.MemberDTO;
 import com.secure6.hhm.connection.DBConnection;
-import com.secure6.hhm.domain.Member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +10,8 @@ import java.sql.SQLException;
 
 public class MemberRepository {
 
-    public Member save(Member member) throws SQLException {
-        String sql = "insert into member(member_id, password, name) values (?, ?, ?)";
+    public MemberDTO save(MemberDTO member) throws SQLException {
+        String sql = "insert into member(memberId, password, name) values (?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstat = null;
