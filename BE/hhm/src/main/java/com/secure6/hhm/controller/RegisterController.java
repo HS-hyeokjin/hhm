@@ -1,6 +1,6 @@
 package com.secure6.hhm.controller;
 
-import com.secure6.hhm.dto.MemberDTO;
+import com.secure6.hhm.dto.MemberDto;
 import com.secure6.hhm.repository.MemberRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +11,8 @@ public class RegisterController {
 
     MemberRepository memberRepository = new MemberRepository();
 
-    @ResponseBody
     @PostMapping("/register")
-    public String MemberDTO(MemberDTO memberDTO) throws SQLException {
+    public String MemberDTO(MemberDto memberDTO) throws SQLException {
 
         memberRepository.save(memberDTO);
 

@@ -1,6 +1,6 @@
 package com.secure6.hhm.repository;
 
-import com.secure6.hhm.dto.MemberDTO;
+import com.secure6.hhm.dto.MemberDto;
 import com.secure6.hhm.connection.DBConnection;
 
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class MemberRepository {
 
-    public MemberDTO save(MemberDTO memberDto) throws SQLException {
+    public MemberDto save(MemberDto memberDto) throws SQLException {
         String sql = "insert into memberDto(memberId, password, address, carNumber, carRegist, infra, phoneNumber, email, name) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
@@ -23,8 +23,8 @@ public class MemberRepository {
             pstat.setString(2, memberDto.getPassword());
             pstat.setString(3, memberDto.getAddress());
             pstat.setString(4, memberDto.getCarNumber());
-            pstat.setString(5, String.valueOf(memberDto.getCarRegist()));
-            pstat.setString(6, String.valueOf(memberDto.getInfra()));
+            pstat.setBoolean(5, memberDto.getCarRegist());
+            pstat.setBoolean(6, memberDto.getInfra());
             pstat.setString(7, memberDto.getPhoneNumber());
             pstat.setString(8, memberDto.getEmail());
             pstat.setString(9, memberDto.getName());
