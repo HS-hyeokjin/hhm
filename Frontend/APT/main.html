@@ -17,11 +17,11 @@
     
 </head>
 <body>
-    <form action="javascript:local();">
+    <form method="GET" action="https://localhost:8080">
 		<table>
 			<tr>
-				<td><label>아이디: <input type="text" size="15" id="id"></label></td>
-				<td><label>비밀번호: <input type="password" size="15" id="pwd"></label></td>
+				<td><label>아이디: <input type="text" name="memberId" size="15" id="id"></label></td>
+				<td><label>비밀번호: <input type="password" name="password" size="15" id="pwd"></label></td>
 				<td><button type="button" onclick="login()">로그인</button></td>
                 <td><button type="button" onclick="location.href='join.html'">회원가입</button></td>
 			</tr>
