@@ -1,6 +1,6 @@
 package com.secure6.hhm.repository;
 
-import com.secure6.hhm.DTO.MemberDTO;
+import com.secure6.hhm.dto.MemberDTO;
 import com.secure6.hhm.connection.DBConnection;
 
 import java.sql.Connection;
@@ -10,8 +10,8 @@ import java.sql.SQLException;
 
 public class MemberRepository {
 
-    public MemberDTO save(MemberDTO member) throws SQLException {
-        String sql = "insert into member(memberId, password, name) values (?, ?, ?)";
+    public MemberDTO save(MemberDTO memberDto) throws SQLException {
+        String sql = "insert into memberDto(memberId, password, address, carNumber, carRegist, infra, phoneNumber, email, name) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstat = null;
@@ -19,11 +19,17 @@ public class MemberRepository {
         try {
             conn = getConnection();
             pstat = conn.prepareStatement(sql);
-            pstat.setString(1, member.getMemberId());
-            pstat.setString(2, member.getPassword());
-            pstat.setString(3, member.getName());
+            pstat.setString(1, memberDto.getMemberId());
+            pstat.setString(2, memberDto.getPassword());
+            pstat.setString(3, memberDto.getAddress());
+            pstat.setString(4, memberDto.getCarNumber());
+            pstat.setString(5, String.valueOf(memberDto.getCarRegist()));
+            pstat.setString(6, String.valueOf(memberDto.getInfra()));
+            pstat.setString(7, memberDto.getPhoneNumber());
+            pstat.setString(8, memberDto.getEmail());
+            pstat.setString(9, memberDto.getName());
             pstat.executeUpdate();
-            return member;
+            return memberDto;
         } catch (SQLException e) {
             throw e;
         } finally {

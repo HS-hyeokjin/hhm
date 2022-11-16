@@ -1,6 +1,5 @@
 package com.secure6.hhm.domain;
 
-import com.secure6.hhm.DTO.MemberDTO;
 import lombok.Data;
 
 @Data

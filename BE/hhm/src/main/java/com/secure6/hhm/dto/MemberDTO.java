@@ -1,4 +1,4 @@
-package com.secure6.hhm.DTO;
+package com.secure6.hhm.dto;
 
 
 import lombok.Getter;
@@ -11,5 +11,11 @@ import lombok.ToString;
 public class MemberDTO {
     private String memberId;
     private String password;
+    private String address;
+    private String carNumber;
+    private Boolean carRegist;
+    private Boolean infra;
+    private String phoneNumber;
+    private String email;
     private String name;
 }
