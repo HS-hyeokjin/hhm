@@ -1,0 +1,62 @@
+package com.secure6.hhm.repository;
+
+import com.secure6.hhm.connection.ConnectionConst;
+import com.secure6.hhm.connection.DBConnection;
+import com.secure6.hhm.domain.Member;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MemberRepository {
+
+    public Member save(Member member) throws SQLException {
+        String sql = "insert into Member(member_id, password, name) values (?, ?, ?)";
+
+        Connection conn = null;
+        PreparedStatement pstat = null;
+
+        try {
+            conn = getConnection();
+            pstat = conn.prepareStatement(sql);
+            pstat.setString(1, member.getMemberId());
+            pstat.setString(2, member.getPassword());
+            pstat.setString(3, member.getName());
+            return member;
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            close(pstat, conn, null);
+        }
+    }
+
+    private void close(PreparedStatement pstat, Connection conn, ResultSet rs) {
+        if (pstat != null) {
+            try {
+                pstat.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private Connection getConnection() throws SQLException {
+        return DBConnection.getConnection();
+    }
+
+}
