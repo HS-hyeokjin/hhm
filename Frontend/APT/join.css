@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(
+      rgba(153, 153, 153, 0.6),
+      rgba(152, 152, 152, 0.6)
+    ), url('../images/apt3.jpg');
+    background-size: cover;
+  }
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: white;
+    height: 60px;
+  }
+  
+  #menu {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 50px;
+  }
+  
+  #menu li {
+    float: left;
+    margin-left: 30px;
+    line-height: 60px;
+    padding: 8px 30px;
+  }
+  
+  #menu li a {
+    color: #545454;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style: none;
+    padding-right: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .join_form {
+    margin: auto;
+    background-color: #D5D2CB;
+    opacity: 0.9;
+    text-align: center;
+    width: 500px;
+    height: 677px;
+    border-radius: 2px;
+  }
+
+  form {
+    display: inline-block;
+    text-align: left;
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+
+  #button_position {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #btn {
+    width: 90px;
+    height: 40px;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto 0;
+    border-radius: 3px;
+    border: #D5D2CB;
+    cursor: pointer;
+    font-weight: bold;
+    color: #434B4E;
+  }
+
+  #title1 {
+    padding-top: 20px;
+  }
+
+  #title2 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #434B4E;
+  }
+
+  #title3 {
+    padding: 7px;
+    border-radius: 5px;
+    border-color: white;
+    border-style: none;
+  }

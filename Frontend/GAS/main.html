@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<title>삼천리</title>  
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./main.css" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<style>
+		body {visibility:hidden;}
+		.show {visibility:visible;}
+	</style>
+</head>
+<body>
+
+<div class="accessbility"><a href="#gotoMainContents">본문  바로가기</a></div><!-- Skip Navigation -->
+
+
+<!-- Header 시작 -->
+<div class="header">
+	<!-- util, gnb 시작 -->
+	<div class="topmenu_wr">       
+		<a href="/main.do" class="logo"><img src="./assets/img/header/logo.gif" alt="삼천리" /></a>
+		<ul class="util">
+                   	
+            <li><a href="/member/login.do">로그인</a></li>
+            <li><a href="/member/join/choice.do">회원가입</a></li>            
+            
+            <li><a href="/sitemap.do">사이트맵</a></li>
+            <li class="last"><a href="/en/main.do" title="새창">English</a></li>
+            </ul>
+        <div class="util_search">
+        	<form name="commonSearchform" action="/search/main.do" onsubmit="goCommonSearch();return false;">
+			<input type="text" name="findStr" placeholder="검색어 입력" title="검색어" />
+			<a href="javascript:goCommonSearch();"><img src="./assets/img/header/btn_search_1.gif" alt="검색" /></a>
+			</form>
+        </div> 
+    </div>
+    
+    <div class="gnb">
+        <ul class="gnb_menuWr">
+            <li class="gnb_menu01">
+                <a href="/company/info/philosophy.do?p=1" class="depTit">기업소개</a>
+                <ul>	
+                    <li><a href="/company/info/philosophy.do?p=1">그룹소개</a></li>
+                    <li><a href="/company/ceo/ceo.do">CEO 인사말</a></li>
+                    <li><a href="/company/history/history.do?p=1">연혁</a></li>
+                    <li><a href="/company/ci/ci.do?p=1">CI</a></li>
+                    <li><a href="/company/cs/charter.do">고객만족</a></li>
+                    <li><a href="/company/social/info.do">사회공헌</a></li>
+                    <!-- cnode 윤리경영 메뉴를 별도로 구성함에 따라 기존 윤리경영 화면 제거예정 -->
+                    <!-- <li><a href="/company/ethic/actionOath.do">윤리경영</a></li> -->
+                    <li><a href="/company/gwp/gwp.do">GWP</a></li>
+                    <li><a href="/company/map/headOffice.do">찾아오시는 길</a></li>
+                </ul>
+            </li>
+            <li class="gnb_menu01">
+                <a href="/business/gas/intro.do?p=1" class="depTit">사업소개</a>
+                <ul>
+                    <li><a href="/business/gas/intro.do?p=1">도시가스사업</a></li>
+                    <li><a href="/business/energy/intro.do">발전 및 집단에너지사업</a></li>
+                </ul>
+            </li>
+            <li class="gnb_menu01">
+                <a href="/rnd/labor/labor.do?p=2" class="depTit">R&amp;D</a>
+				<ul>
+                    <li><a href="/rnd/labor/labor.do?p=2">탄소중립연구소 소개</a></li>
+                    <li><a href="/rnd/state/resultList.do">연구 현황</a></li>
+                    <!-- <li><a href="/rnd/community/newsList.do">커뮤니티</a></li> -->
+                </ul>
+            </li>
+            <li class="gnb_menu01">
+                <a href="/invest/structure/summary.do" class="depTit">투자정보</a>
+                <ul>
+                    <li><a href="/invest/structure/summary.do">지배구조</a></li>
+                    <li><a href="/invest/finance/lngSalesReport.do">재무정보</a></li>
+                   <!--  <li><a href="/invest/ir/ir.do">주가정보</a></li> -->
+                    <li><a href="/invest/notice/electDisclosure.do">공시/공고</a></li>
+                    <li><a href="/invest/pds/resultList.do">IR자료실</a></li>
+                    <li><a href="/invest/grade/esg.do">ESG</a></li>
+                </ul>
+            </li>
+            <li class="gnb_menu01 other01">
+                <a href="/pr/news/newsList.do" class="depTit">홍보센터</a>
+                <ul>
+                    <li><a href="/pr/news/newsList.do">뉴스센터</a></li>
+                    <li><a href="/pr/vod/visualNewsList.do">홍보영상</a></li>
+                    <li><a href="/pr/paper/onlinePaper.do">사보</a></li>
+                    <li><a href="/pr/annual/annualReportList.do">Annual Report</a></li>
+                    <li><a href="/pr/library/paperAdList.do">PR Library</a></li>
+                    <li><a href="http://samchully60.co.kr" target="_blank">사이버역사관</a></li> 
+                </ul>
+            </li>
+            <li class="gnb_menu01 other02">
+				<a href="/customer/main.do" class="depTit">고객센터</a>
+				<ul>
+					<li><a href="/customer/gas/notice/list.do">공지사항</a></li>
+					<li><a href="/customer/gas/info/service/info.do">안내</a></li>
+					<li><a href="/customer/gas/inquiry/check.do">조회/납부</a></li>
+					<li><a href="/customer/gas/request/supply/list.do">신청</a></li>
+					<li><a href="/customer/gas/support/faq/list.do">문의</a></li>
+					<li class="line"><a href="/customer/electricity/notice/list.do">전기(광명 역세권)</a></li>
+					
+				</ul>
+			</li>
+            <li class="gnb_menu01 other02"><a href="http://recruit.samchully.co.kr/main.do" target="_blank" title="인재채용 새창열림" class="depTit">인재채용</a></li>
+            <li class="gnb_menu01 other03">
+				<a href="/ethics/main.do" class="depTit">윤리경영</a>
+				<ul>
+					<li><a href="/ethics/report/realname.do">윤리상담/제보센터</a></li>
+					<li><a href="/ethics/standards/code.do">윤리규정</a></li>
+					<li><a href="/ethics/activity/operation.do">윤리실천활동</a></li>
+					
+				</ul>
+			</li>
+			
+        </ul>
+        
+        	
+    </div>
+    <!--// util, gnb 끝 -->
+
+</div>
+
+
+<!-- Contents 시작 -->
+	<!-- 상단비쥬얼 시작 -->
+	<div class="main_Top" id="gotoMainContents">
+		<!-- 수정 14.12.05 시작 -->
+		<ul class="visual">
+			<!-- <li><strong>함께한 60년, 혁신과 도전으로<br />새로운 성장을</strong><span></span></li> -->
+			<li><strong>신뢰와 나눔 속에<br />사랑 받는 기업으로</strong><span></span></li>
+			<!-- <li><strong>함께 사랑을 나누는<br />든든한 동반자</strong><span></span></li> -->
+		</ul>
+
+		<div class="btns">
+			<!-- a href="#" title="함께한 60년, 혁신과 도전으로 새로운 성장을"><img src="/assets/img/main/btn_on_4.png" alt="함께한 60년, 혁신과 도전으로 새로운 성장을 선택" /></a> -->
+			<!-- alt 속성에 제목 뿌려주세요 -->
+			<a href="#" title="신뢰와 나눔속에 사랑받는 기업으로"><img src="./assets/img/main/btn_off_4.png" alt="신뢰와 나눔속에 사랑받는 기업으로 선택" /></a>
+			<!-- a href="#" title="함께 사랑을 나누는 든든한 동반자"><img src="/assets/img/main/btn_off_4.png" alt="행복 에너지를 제공하는 사랑 받는 기업 선택" /></a> -->
+			&nbsp;&nbsp;
+			<!-- <a href="#" title="자동롤링 시작"><img src="/assets/img/main/btn_play_4.png" alt="자동롤링 시작" /></a> -->
+			<!--
+			<a href="#"><img src="../img/main/btn_stop_4.png" alt="자동롤링 멈춤" /></a>
+			-->
+		</div>
+		<!--// 수정 14.12.05 끝 -->
+
+		<div class="quickLink_bg"><!-- 퀵메뉴 bg --></div>
+		<ul class="quickLink">
+			<li class="search01"><a href="/customer/gas/inquiry/check.do">요금조회</a></li>
+			<li class="search02"><a href="/customer/gas/inquiry/charge.do">요금납부</a></li>
+			<li class="search03"><a onclick="window.open(this.href, '', 'scrollbars=yes, width=480, height=780'); return false;" href="http://simplereg.samchully.co.kr">전출입신청</a></li>
+			<li class="search04"><a href="/customer/gas/request/format/list.do">신청서양식</a></li>
+			<!-- <li class="search05"><a onclick="window.open(this.href, '', 'scrollbars=yes, width=480, height=680'); return false;" href="https://samchully.moneybrain.ai/mobile/chatbot/samchully">톡서비스</a></li> -->
+			<li class="quickSearch">
+				<form name="feeForm" onsubmit="openSmplResult();return false;">
+				<strong for="quickSearch01">간편요금조회</strong>
+				<div class="quickSearch_box">
+					<input type="text" name="caNumber" id="quickSearch01" title="납부자번호" placeholder="납부자번호 입력" maxlength="15"/>
+					<a href="javascript:openSmplResult();">간편요금조회</a>
+				</div>
+				</form>
+			</li>
+			<li class="last"><a href="/cooperation/notice/coperationNotice.do"><img src="./assets/img/main/btn_search01.gif" alt="협력업체 바로가기" /></a></li>
+		</ul>
+	</div>
+	<!--// 상단비쥬얼 끝 -->
+
+	<!-- -->
+	<div class="main_block2">
+		<div class="inbox">
+			<!-- 팝업 존 -->
+			<div class="slidePop">
+				<div class="slide">
+					<ul>
+						
+						<li>
+							
+							<a href="/customer/main.do" target="_blank" title="도시가스 관련 요금조회/납부, 전출/전입 접수, 자동이체신청 등 편리한 고객 서비스를 이용하실 수 있습니다. 새창열림">
+							
+						<img src="./upload/popupzone/bacrakpgab981efofvlz.jpg" alt="도시가스 관련 요금조회/납부, 전출/전입 접수, 자동이체신청 등 편리한 고객 서비스를 이용하실 수 있습니다." /></a></li>
+						
+					</ul>
+				</div>
+				<div class="btns">
+					
+					<a href="#" title="도시가스고객서비스"><img src="./assets/img/main/btn_on_2.gif" alt="도시가스고객서비스" /></a><!-- alt 속성에 제목 뿌려주세요 -->
+					
+					<a href="#" title="자동롤링"><img src="./assets/img/main/btn_play_2.gif" alt="자동롤링 시작" /></a>
+					<!--
+					<a href="#"><img src="/assets/img/main/btn_stop_2.gif" alt="자동롤링 멈춤" /></a>
+					-->
+				</div>
+			</div>
+			
+			<!-- 홍보센터 -->
+			<div class="slideBlock">
+				<a href="./pr/news/newsList.do" class="title">뉴스센터</a>
+				<ul>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7981">
+							<span class="subject">삼천리, 지역사회 자연 지킴이로 나서</span>
+							<br/>
+							<span class="date">2022.10.24</span>
+							<img src="./upload/pr/news/7rgn6m07gtht7azzoppk.jpg" alt="삼천리, 지역사회 자연 지킴이로 나서" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7961">
+							<span class="subject">‘KLPGA-삼천리 투게더 꿈나무대회 2022’ 성황리에 마쳐</span>
+							<br/>
+							<span class="date">2022.10.21</span>
+							<img src="./upload/pr/news/lhena3oaenflhrggxjf3.jpg" alt="‘KLPGA-삼천리 투게더 꿈나무대회 2022’ 성황리에 마쳐" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7942">
+							<span class="subject">삼천리, 산업체 초청 기술세미나 개최</span>
+							<br/>
+							<span class="date">2022.10.20</span>
+							<img src="./upload/pr/news/eo3ksxzbvwwfiltfhcrw.png" alt="삼천리, 산업체 초청 기술세미나 개최" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7941">
+							<span class="subject">'KLPGA-삼천리 투게더 꿈나무대회 2022' 개최</span>
+							<br/>
+							<span class="date">2022.10.17</span>
+							<img src="./upload/pr/news/eyftwvlkkikadbbjdrko.png" alt="'KLPGA-삼천리 투게더 꿈나무대회 2022' 개최" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7921">
+							<span class="subject">삼천리 애뉴얼리포트 美  LACP ‘2021 비전 어워드’ 대상 수상</span>
+							<br/>
+							<span class="date">2022.10.12</span>
+							<img src="./upload/pr/news/5kalbwhwg7aqzgot03ts.jpg" alt="삼천리 애뉴얼리포트 美  LACP ‘2021 비전 어워드’ 대상 수상" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7881">
+							<span class="subject">삼천리, 안전의식 강화하는 '가스안전 결의대회' 개최</span>
+							<br/>
+							<span class="date">2022.10.05</span>
+							<img src="./upload/pr/news/3iqdszdu3ar9lgilo2kv.jpg" alt="삼천리, 안전의식 강화하는 '가스안전 결의대회' 개최" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="./pr/news/newsView.do?idx=7861">
+							<span class="subject">삼천리, 창립 67주년 기념식 개최</span>
+							<br/>
+							<span class="date">2022.09.30</span>
+							<img src="./upload/pr/news/ijupxihw0sbnvtyevtqo.jpg" alt="삼천리, 창립 67주년 기념식 개최" />
+						</a>
+					</li>
+					
+				</ul>
+<!-- 				<div class="btns"> -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_on_1.gif" alt="00 선택" /></a>alt 속성에 제목 뿌려주세요 -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_off_1.gif" alt="00 선택" /></a> -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_off_1.gif" alt="00 선택" /></a> -->
+<!-- 				</div> -->
+			</div>
+			
+			<!-- 공지사항 -->
+			<div class="noticeBox">
+				<a href="#" class="title">공지사항</a>
+				<a href="#" class="more"></a>
+				<ul>
+					
+					<li><a href="#">도시가스 요금단가 변동 &#40;2022년 11월 1일자&#41;</a></li>
+					
+					<li><a href="#">도시가스 요금단가 변동 &#40;2022년 10월 1일자&#41;</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--// -->
+
+	<!-- 회색배경 블록 시작 -->
+	<div class="main_block1">
+		<div class="inbox">
+			<!-- 삼천리 Story -->
+			<a href="/company/info/philosophy.do?p=1" class="btn1">에너지에서 환경까지<br />미래를 창조하는 삼천리<strong>삼천리<br />STORY</strong></a>
+			
+			<!-- 사회공헌 소식 -->
+			<div class="slideBlock">
+				<a href="/company/social/photoList.do" class="title">사회공헌갤러리</a>
+				<ul>
+					
+					<li>
+						<a href="./company/social/photoView.do?idx=148">
+							<span class="subject">자매결연 군부대 방문 (2022-01)</span>
+							<span class="date">2022.01.26</span>
+							<img src="./upload/company/social/7cvwagoompkgwvmdubkx.jpg" alt="자매결연 군부대 방문" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=147">
+							<span class="subject">사랑나눔의 날 (2021-12)</span>
+							<span class="date">2021.12.22</span>
+							<img src="./upload/company/social/fmbp0apjxaurejid83pw.png" alt="사랑나눔의 날" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=146">
+							<span class="subject">자매결연 군부대 방문 (2021-02)</span>
+							<span class="date">2021.02.09</span>
+							<img src="./upload/company/social/iznxzyyzvnuf0y0xbcjm.png" alt="자매결연 군부대 방문" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=145">
+							<span class="subject">자매결연 군부대 방문 (2020-01)</span>
+							<span class="date">2020.01.28</span>
+							<img src="./upload/company/social/uznmcfivrnfcafqhyzg5.jpg" alt="자매결연 군부대 방문" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=144">
+							<span class="subject">자원봉사활동 (2019-12)</span>
+							<span class="date">2019.12.20</span>
+							<img src="./upload/company/social/drpayjovl0d2xasemfpf.jpg" alt="자원봉사활동" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=143">
+							<span class="subject">사랑나눔의 날 (2019-12)</span>
+							<span class="date">2019.12.17</span>
+							<img src="./upload/company/social/h9womehrpc6ucuw0q03o.jpg" alt="사랑나눔의 날" />
+						</a>
+					</li>
+					
+					<li>
+						<a href="/company/social/photoView.do?idx=142">
+							<span class="subject">자원봉사활동 (2019-11)</span>
+							<span class="date">2019.11.26</span>
+							<img src="./upload/company/social/xze4528gi8gurwpiqzbo.jpg" alt="자원봉사활동" />
+						</a>
+					</li>
+					
+				</ul>
+<!-- 				<div class="btns"> -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_on_3.gif" alt="00 선택" /></a>alt 속성에 제목 뿌려주세요 -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_off_3.gif" alt="00 선택" /></a> -->
+<!-- 					<a href="#"><img src="/assets/img/main/btn_off_3.gif" alt="00 선택" /></a> -->
+<!-- 				</div> -->
+			</div>
+			
+			<!-- Annual Report -->
+			<div class="slidePop2">
+				<div class="slide">
+					<ul>
+						
+						<li>
+							
+							<a href="http://sabo.samchully.co.kr/" target="_blank" title="bg_report_1 새창열림">
+							
+							<img src="./upload/popupzone/oud8lyklhcnlcwvsanae.jpg" alt="bg_report_1" /></a>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="btns">
+					
+					<a href="#" title="bg_report_1"><img src="./assets/img/main/btn_on_2.gif" alt="bg_report_1" /></a><!-- alt 속성에 제목 뿌려주세요 -->
+					
+					<a href="#" title="자동롤링"><img src="./assets/img/main/btn_play_2.gif" alt="자동롤링 시작" /></a>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!--// 회색배경 블록 끝 -->
+	
+	<!-- 기타링크 시작 -->
+	<ul class="main_etcLink">
+		<li><a href="/customer/gas/support/qna/form.do"><strong>고객의 소리</strong><span>고객님의 궁금한<br />점을 남겨주세요</span></a></li>
+		<li><a href="/customer/gas/info/usage/new.do"><strong>이용안내</strong><span>도시가스 관련<br />안내사항입니다.</span></a></li>
+		<li><a href="#" onclick="window.open('http://www.samchully.co.kr/customer/gas/info/usage/popup/fee.do','_blank','height=600,width=800,top=10,left=10, scrollbars=yes')" style="overflow:scroll;"><strong>연결비용 안내</strong><span>가스렌지 연결<br />비용 안내입니다.</span></a></li>
+		<li><a href="/company/map/csCenter.do"><strong>고객센터</strong><img src="http://www.samchully.co.kr/assets/img/main/txt_etc_1_s.gif" alt="1544-3002" /></a></li>
+		<li><a href="/business/gas/safe.do?p=4"><strong>가스사고 신고접수</strong><span>가스 신고를 접수<br />하실 수 있습니다.</span></a></li>
+		<li><a href="/ethics/report/realname.do"><strong>윤리 제보센터</strong><span>부정 및 비리행위 등에<br />대한 제보 센터입니다.</span></a></li>
+	</ul>
+	<!--// 기타링크 끝 -->
+<!--// Contents 끝 -->
+
+
+<!-- Footer 시작 -->
+<div class="footer">
+	<div class="inBox">
+		<ul class="menu">
+			<li><a href="/individual.do">개인정보 처리 방침</a></li>
+			<li><a href="pop_email.html" onclick="popupView('/terms/pop_email.html',500,280,'no');return false;" title="새창">메일주소 무단수집거부</a></li>
+			<li><a href="/trustInfo.do">신용정보 조회사실 통보공시</a></li>
+			<li><a href="/provision.do">이용약관</a></li>
+		</ul>
+		
+		<address>07328 서울특별시 영등포구 국제금융로 6길 42 (주)삼천리</address>
+		<p>Copyright samchully Corp. All rights reserved.</p>
+		
+		<div class="etc"> 
+		    <img src="./assets/img/footer/zon.JPG" alt="존경받는기업" />
+		    <!-- '18.1분기 삭제<img src="/assets/img/footer/K-GWPI.jpg" alt="한국에서가장일하기좋은기업기업" /> -->
+			<img src="./assets/img/footer/img_logo_1.gif" style="width: 138px; height: auto;" alt="소비자중심경영인증기업" />
+			<img src="./assets/img/footer/img_logo_3.gif" style="width: 150px; height: auto;" alt="올해의 CCM" />
+			<img src="./assets/img/footer/edu2.png" alt="교육기부 진로체험 인증기관" />
+			<!-- <a href="http://wa.or.kr/waMark/status.asp" target="_blank" title="새창"><img src="/assets/img/footer/img_logo_2.jpg" alt="웹접근성 인증마크" /></a> -->
+		</div>
+		
+		<div class="fLink">
+			<select class="formSelect" style="width:180px;" title="패밀리사이트 바로가기">
+				<option>Family Site</option>
+				<option value="http://www.sticorp.co.kr">(주)ST International</option>
+				<option value="http://www.samchullyeng.co.kr">(주)삼천리 ENG</option>
+				<option value="http://www.samchullyes.co.kr">(주)삼천리 ES</option>
+				<option value="http://www.huces.co.kr">(주)HUCES</option>
+				<option value="http://www.chai797.co.kr">(주)SL&amp;C(Chai797)</option>
+				<option value="http://www.samchullymotors.co.kr/">(주)삼천리모터스</option>
+				<option value="http://www.cheonman.or.kr">천만장학회</option>
+			</select>
+			<a href="#"><img src="./assets/img/common/btn_confirm_3.gif" alt="확인" /></a>
+		</div>
+		<a href="#gotoMainContents" class="top"><img src="./assets/img/common/btn_top_1.gif" alt="go to Top" /></a>
+	</div>
+</div>
+<!--// Footer 끝 -->
+
+
+
+<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/js/jquery.form.stylishSelect.js"></script>
+<!-- SELECT를 위한 스크립트 -->
+<script type="text/javascript">
+//<![CDATA[
+function openSmplResult()
+{
+	var f = document.forms.feeForm;
+	
+	if( f.caNumber.value == '' ) return doError('납부자번호를 입력해주세요.' , 'caNumber' , 'feeForm');
+	
+	window.open('' , 'smplResult' , 'width=850,height=600,scrollbars=yes');
+	f.target = 'smplResult';
+	f.action = '/customer/gas/inquiry/popup/smplResult.do';
+	f.submit();
+}
+           
+	$('.formSelect').sSelect();
+	
+	$(window).bind("load", function(){
+		$('body').addClass('show');
+	});
+	
+	$(document).ready(function(){
+		//납부 유예 팝업
+		var popupYN = m_getCookie('popupYN');		//쿠키 가져오기
+		if(popupYN == undefined){
+			popupTimeChk("202002240000","202002290000");
+		}
+		
+		//도시가스 팝업
+		var popupYN2 = m_getCookie('popupYN2');		//쿠키 가져오기
+		if(popupYN2 == undefined){
+			popupTimeChk2("202002240000","202002290000");
+		}
+	});
+	
+//]]>
+</script>
+
+</body>
+</html>

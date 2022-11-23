@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyonggi Apartment</title>
+    <link rel="stylesheet" href="./main.css">
+    <title>Gyonggi Apartments</title>
 
     <script>
         function local() {
@@ -17,30 +18,123 @@
     
 </head>
 <body>
+    <div class="join_top">
     <form method="GET" action="https://localhost:8080">
 		<table>
 			<tr>
-				<td><label>아이디: <input type="text" name="memberId" size="15" id="id"></label></td>
-				<td><label>비밀번호: <input type="password" name="password" size="15" id="pwd"></label></td>
-				<td><button type="button" onclick="login()">로그인</button></td>
-                <td><button type="button" onclick="location.href='join.html'">회원가입</button></td>
+				<td><label>ID : <input type="text" name="memberId" size="15" id="id"></label></td>
+				<td><label>&nbsp;&nbsp;PW : <input type="password" name="password" size="15" id="pwd"></label>&nbsp;&nbsp;</td>
+				<td><button type="button" onclick="login()" id="login_btn">SIGN IN</button>&nbsp;&nbsp;</td>
+                <td><button type="button" onclick="location.href='join.html'" id="join_btn">SIGN UP</button></td>
 			</tr>
 		</table>
 	</form>
+</div>
 
 
     <div class="nav">
         <a href="main.html" id="logo">
-            <img src="../images/logo1.png" width="200px">
+            <img src="../images/logo1.png" width="150px">
         </a>
 
         <ul id="menu">
             <li><a href="main.html">홈</a></li>
             <li><a href="management.html">관리사무소</a></li>
-            <li><a href="community">커뮤니티</a></li>
+            <li><a href="./COMMUNITY/community.html">커뮤니티</a></li>
             <li><a href="facility">시설이용</a></li>
             <li><a href="information">정보마당</a></li>
         </ul>
     </div>
+
+    <div class="header">
+        <div class="animation">
+            <h1>
+                <span>아파트 라이프의 시작</span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KYONGGI APARTMENTS</span>
+              </h1>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="middle1">
+        <h3>관리실 전화번호</h3><br>
+        <h4>031)245-6547</h4>
+        </div>
+
+        <div class="middle2">
+            <img id="img2" src="../images/shop.png" width="50px"> 중고장터&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img id="img2" src="../images/chat.png" width="50px"> 오픈카톡방&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img id="img2" src="../images/hospital.png" width="50px"> 주변병원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img id="img2" src="../images/calender.png" width="50px"> 이벤트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img id="img2" src="../images/tshirt.png" width="50px"> 의류수거함 위치&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+    </div>
+    
+<div class="items">
+        <h3>Welcome To Visit Our WebSite!</h3>
+
+        <div class="item-list">
+
+            <div id="slider-div">
+                <div> <a href="#" class="item">
+                        <img src="../images/gym.jpg" width="300px" height="200px">
+                        <div class="item-name"><b>GYM</b></div>
+                        <div class="item-price">체육시설</div>
+                    </a></div>
+                <div> <a href="#" class="item">
+                        <img src="../images/study.jpg" width="300px">
+                        <div class="item-name"><b>STUDY ROOMS</b></div>
+                        <div class="item-price">스터디룸</div>
+                    </a></div>
+                <div> <a href="#" class="item">
+                        <img src="../images/kids.jpg" width="300px">
+                        <div class="item-name"><b>FOR KIDS</b></div>
+                        <div class="item-price">놀이시설</div>
+                    </a></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="footer">
+        <h2>All About KYONGGI APARTMENT</h2>
+        <p style="padding-top: 15px"> 다양한 활동을 통해 아파트 커뮤니티를 활성화 시켜보세요</p>
+        <div class="footer-contents">
+            <div class="contents_one">
+                <ul>
+                    <h3>Services</h3>
+                    <li>Help</li>
+                    <li>Register</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="contents_two">
+                <ul>
+                    <h3>Contents</h3>
+                    <li>Community</li>
+                    <li>Collaboration</li>
+                    <li>Newsletter</li>
+                </ul>
+            </div>
+            <div class="contents_three">
+                <ul>
+                    <h3>Facilities</h3>
+                    <li>Gym</li>
+                    <li>Study Rooms</li>
+                    <li>Kindergarten</li>
+                </ul>
+            </div>
+            <div class="contents_four">
+                <ul>
+                    <h3>Information</h3>
+                    <li>History</li>
+                    <li>Store</li>
+                    <li>Location</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
