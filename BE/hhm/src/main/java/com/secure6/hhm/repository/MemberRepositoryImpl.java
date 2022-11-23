@@ -13,7 +13,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     @Override
     public MemberDto save(MemberDto memberDto) throws SQLException {
-        String sql = "insert into memberDto(memberId, password, address, carNumber, carRegist, infra, phoneNumber, email, name) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into member(memberId, password, address, carNumber, carRegist, infra, phoneNumber, email, name) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstat = null;
