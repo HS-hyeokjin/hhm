@@ -1,19 +1,16 @@
 package com.secure6.hhm.repository;
 
 import com.secure6.hhm.connection.DBConnection;
-import com.secure6.hhm.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MemberRepositoryTest {
 
     DBConnection dbConnection = new DBConnection();
-    MemberRepository memberRepository = new MemberRepository();
+    MemberRepositoryImpl memberRepository = new MemberRepositoryImpl();
 
 /*    @Test
     void save() throws SQLException {
