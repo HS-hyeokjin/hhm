@@ -3,10 +3,7 @@ package com.secure6.hhm.repository;
 import com.secure6.hhm.connection.DBConnection;
 import com.secure6.hhm.dto.PostDto;
 
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,16 +11,16 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public List<PostDto> search(String word) throws SQLException {
-        String sql = "SELECT * FROM post WHERE title LIKE '%" + word + "%'";
+        String sql = "SELECT id, title, writer FROM post WHERE title LIKE '%" + word + "%'";
 
         Connection conn = null;
-        Statement stmt = null;
+        Statement stat = null;
         ResultSet rs = null;
         List<PostDto> result = new ArrayList<>();
         try {
             conn = getConnection();
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(sql);
+            stat = conn.createStatement();
+            rs = stat.executeQuery(sql);
             while (rs.next()) {
                 PostDto postDto = new PostDto();
                 postDto.setId(rs.getInt("id"));
@@ -36,14 +33,77 @@ public class PostRepositoryImpl implements PostRepository {
             e.printStackTrace();
             throw e;
         } finally {
-            close(stmt, conn, rs);
+            close(stat, null, conn, rs);
         }
     }
 
-    private void close(Statement stat, Connection conn, ResultSet rs) {
+    @Override
+    public List<PostDto> findAll() throws SQLException {
+        String sql = "SELECT id, title, writer FROM post";
+
+        Connection conn = null;
+        PreparedStatement pstat = null;
+        ResultSet rs = null;
+        List<PostDto> result = new ArrayList<>();
+        try {
+            conn = getConnection();
+            pstat = conn.prepareStatement(sql);
+            rs = pstat.executeQuery(sql);
+            while (rs.next()) {
+                PostDto postDto = new PostDto();
+                postDto.setId(rs.getInt("id"));
+                postDto.setTitle(rs.getString("title"));
+                postDto.setWriter(rs.getString("writer"));
+                result.add(postDto);
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            close(null, pstat, conn, rs);
+        }
+    }
+
+    @Override
+    public PostDto findById(int id) throws SQLException{
+        String sql = "SELECT * FROM post WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstat = null;
+        ResultSet rs = null;
+        PostDto result = new PostDto();
+        try {
+            conn = getConnection();
+            pstat = conn.prepareStatement(sql);
+            pstat.setInt(1, id);
+            rs = pstat.executeQuery();
+            while (rs.next()) {
+                result.setId(rs.getInt("id"));
+                result.setTitle(rs.getString("title"));
+                result.setContent(rs.getString("content"));
+                result.setWriter(rs.getString("writer"));
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            close(null, pstat, conn, rs);
+        }
+    }
+
+    private void close(Statement stat, PreparedStatement pstat, Connection conn, ResultSet rs) {
         if (stat != null) {
             try {
                 stat.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (pstat != null) {
+            try {
+                pstat.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
