@@ -29,4 +29,18 @@ class PostRepositoryTest {
         PostDto postDto = postRepository.findById(2);
         assertThat(postDto.getWriter()).isEqualTo("admin");
     }
+
+    @Test
+    void update() throws SQLException {
+        PostDto postDto = new PostDto();
+        postDto.setId(5);
+        postDto.setTitle("변경합니다.");
+        postDto.setContent("변경 사항은 다음과 같습니다.");
+        postDto.setWriter("admin");
+
+        int success = postRepository.update(postDto);
+
+        assertThat(success).isEqualTo(1);
+    }
+
 }

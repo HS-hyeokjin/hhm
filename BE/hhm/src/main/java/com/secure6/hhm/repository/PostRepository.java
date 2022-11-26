@@ -12,7 +12,6 @@ public interface PostRepository {
     List<PostDto> search(String word) throws SQLException;
     List<PostDto> findAll() throws SQLException;
     PostDto findById(int id) throws SQLException;
-//    int save(PostDto postDto);
-//    int update(PostDto postDto);
+    int update(PostDto postDto) throws SQLException;
 
 }

@@ -93,6 +93,30 @@ public class PostRepositoryImpl implements PostRepository {
         }
     }
 
+    @Override
+    public int update(PostDto postDto) throws SQLException {
+        String sql = "UPDATE post SET title = ?, content = ? WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstat = null;
+        int success = 0;
+        try {
+            conn = getConnection();
+            pstat = conn.prepareStatement(sql);
+            pstat.setString(1, postDto.getTitle());
+            pstat.setString(2, postDto.getContent());
+            pstat.setInt(3, postDto.getId());
+            success = pstat.executeUpdate();
+
+            return success;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            close(null, pstat, conn, null);
+        }
+    }
+
     private void close(Statement stat, PreparedStatement pstat, Connection conn, ResultSet rs) {
         if (stat != null) {
             try {
