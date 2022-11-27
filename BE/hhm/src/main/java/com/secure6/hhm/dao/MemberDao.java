@@ -7,20 +7,19 @@ import java.sql.*;
 
 public class MemberDao {
 
-    Connection conn =null;
-    PreparedStatement pstmt = null;
-    private ResultSet rs;
-
     public MemberDao() {
     }
 
     public String login(MemberLoginDto memberLoginDto) throws SQLException {
-        String SQL = "SELECT password FROM member WHERE memberId = ?";
+        String SQL = String.format("SELECT password FROM member WHERE memberId = '%s'",memberLoginDto.getMemberId());
+        Connection conn =null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
         try {
             conn = getConnection();
-            pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1,  memberLoginDto.getMemberId());
-            rs = pstmt.executeQuery(); // 어떠한 결과를 받아오는 ResultSet 타입의 rs 변수에 쿼리문을 실행한 결과를 넣어줌
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL); // 어떠한 결과를 받아오는 ResultSet 타입의 rs 변수에 쿼리문을 실행한 결과를 넣어줌
             if (rs.next()) {
                 if (rs.getString(1).contentEquals(memberLoginDto.getPassword())) {
                     return "로그인성공";
