@@ -22,7 +22,7 @@ public class MemberDao {
             pstmt.setString(1,  memberLoginDto.getMemberId());
             rs = pstmt.executeQuery(); // 어떠한 결과를 받아오는 ResultSet 타입의 rs 변수에 쿼리문을 실행한 결과를 넣어줌
             if (rs.next()) {
-                if (rs.getString(1).contentEquals(memberLoginDto.getPassword())) {
+                if (rs.getString(1).equals(memberLoginDto.getPassword())) {
                     return "로그인성공";
                 }
                 else {
