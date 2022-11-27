@@ -15,16 +15,7 @@ import java.sql.SQLException;
 public class MemberController {
 
     MemberRepository memberRepository = new MemberRepositoryImpl();
-<<<<<<< Updated upstream
 
-    MemberDao memberDao = new MemberDao();
-
-    @GetMapping("/login")
-    public String MemberLogin(MemberLoginDto memberLogin) throws SQLException {
-        String rs = memberDao.login(memberLogin);
-
-        return rs;
-=======
     MemberDao memberDao = new MemberDao();
 
     @GetMapping("/login")
@@ -43,16 +34,12 @@ public class MemberController {
             loginResponseDto.setRs("로그인실패");
         }
         return loginResponseDto;
->>>>>>> Stashed changes
     }
 
     @PostMapping("/register")
     public String Member(MemberDto member) throws SQLException {
         memberRepository.save(member);
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
+
         return member.toString();
     }
 
