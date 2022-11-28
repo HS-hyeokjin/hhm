@@ -4,34 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./main.css">
     <title>Gyonggi Apartments</title>
 
     <script>
-        function local() {
-            var id = document.getElementById("id").value;
-            var pwd = document.getElementById("pwd").value;
-            
-            alert("아이디:" + id + ", 비밀번호: " + pwd);
-        }
+        $(document).ready(function(){
+            $("#login_btn").click(function(){
+                console.log("ajax 실행");
+                $.ajax({
+                    url: "http://localhost:8080/member/login",
+                    type: "GET",
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    async: false,
+                    data: {
+                        memberId: $("#memberId").val(),
+                        password: $("#password").val()
+                    },
+                    success: function(json) {
+                        if(json === "") {
+                            alert("아이디 비번 확인");
+                            $("#memberId").val("");
+                            $("#password").val("");
+                        } else {
+                            sessionStorage.setItem("login", JSON.stringify(json));
+                            alert(`${json.memberId}님 환영`);
+                        }
+                    },
+                    error: function() {
+                        alert('error');
+                    }
+                });
+            });
+        });
     </script>
-    
 </head>
+
 <body>
+
     <div class="join_top">
-    <form method="GET" action="https://localhost:8080">
-		<table>
-			<tr>
-				<td><label>ID : <input type="text" name="memberId" size="15" id="id"></label></td>
-				<td><label>&nbsp;&nbsp;PW : <input type="password" name="password" size="15" id="pwd"></label>&nbsp;&nbsp;</td>
-				<td><button type="button" onclick="login()" id="login_btn">SIGN IN</button>&nbsp;&nbsp;</td>
-                <td><button type="button" onclick="location.href='join.html'" id="join_btn">SIGN UP</button></td>
-			</tr>
-		</table>
-	</form>
-</div>
-
-
+        <form class="login_form" onsubmit="login_success">
+            <table>
+                <tr>
+                    <td><label>ID : <input type="text" name="memberId" size="15" id="id"></label></td>
+                    <td><label>&nbsp;&nbsp;PW : <input type="password" name="password" size="15" id="pwd"></label>&nbsp;&nbsp;</td>
+                    <td><input type="submit" value="SIGN IN" id="login_btn">&nbsp;&nbsp;</td>
+                    <td><button type="button" onclick="location.href='join.html'" id="join_btn">SIGN UP</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
     <div class="nav">
         <a href="main.html" id="logo">
             <img src="../images/logo1.png" width="150px">

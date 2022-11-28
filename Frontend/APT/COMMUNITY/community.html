@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./community.css">
     <link rel="stylesheet" href="../../../bootstrap-3.3.2-dist/css/bootstrap.min.css" />
-    <title>Community</title>
+    <title>COMMUNITY</title>
 </head>
 <body>
     <div class="nav">
@@ -31,31 +31,40 @@
          </div>
     </div>
 
+    <div class="search">
+      <form class="row g-3 d-fex justify-content-end" >
+        <div class="col-auto">
+          <input type="text" class="form-control" name="word" >
+          <button type="submit" class="btn btn-primary mb-3">검색</button>
+        </div>
+
+      
+
+      </form>
+    </div>
+
     <div class="container">
         <table class="table">
           <thead class="thead-light">
             <tr class="text-center">
               <th scope="col">#</th>
+              <th scope="col">아이디</th>
               <th scope="col">제목</th>
               <th scope="col">작성자</th>
-              <th scope="col">작성일</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="text-center" th:each="post : ${postList}">
+            <tr class="text-center" th:each="post : ${word}">
               <th scope="row">
-                <span th:text="${post.id}"></span>
+                <span th:text="${word.id}"></span>
               </th>
               <td>
-                <a th:href="@{'/post/' + ${post.id}}">
-                  <span th:text="${post.title}"></span>
+                <a th:href="@{./write${word.id}}">
+                  <span th:text="${word.title}"></span>
                 </a>
               </td>
               <td>
-                <span th:text="${post.author}"></span>
-              </td>
-              <td>
-                <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+                <span th:text="${word.writer}"></span>
               </td>
             </tr>
           </tbody>
@@ -63,7 +72,7 @@
         <div class="row">
           <div class="col-auto mr-auto"></div>
           <div class="col-auto">
-            <a class="btn btn-primary" th:href="@{/post}" role="button">글쓰기</a>
+            <a class="btn btn-primary" onclick="javascript:location.href='./write.html'" role="button">글쓰기</a>
           </div>
         </div>
       </div>
@@ -71,4 +80,4 @@
       <script src="../../../bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 
 </body>
-</html> 
+</html>  
