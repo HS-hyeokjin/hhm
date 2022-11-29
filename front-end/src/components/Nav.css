@@ -1,0 +1,31 @@
+* {
+    margin: 0 auto;
+    font-family: "Noto Sans KR", sans-serif;
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+  }
+  #apt_logo {
+    padding-left: 50px;
+    width: 200px;
+    float: left;
+}
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+  }
+
+.nav_list {
+    float: right;
+}
+#category {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 50px;
+    padding-left: 130px;
+    padding-top: 40px;
+}
+  

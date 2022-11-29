@@ -1,0 +1,68 @@
+* {
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main_2 {
+    background-image: url(../../public/apt.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    
+    padding-top: 300px;
+    background-color: aqua;
+    height: 45vh;
+}
+.main_2::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    bottom: 113px;
+    background-color: rgb(153, 153, 153);
+}
+
+#text1 {
+    padding-left: 80px;
+    font-size: 50px;
+}
+
+.board_btn {
+float: left;
+margin-left: 800px;
+    padding: 25px 50px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #C9B99F;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.middle {
+    margin: auto;
+    display: flex;
+    background-color: aliceblue;
+  }
+  
+  .middle1 {
+    width: 200px;
+    height: 84px;
+    padding-top: 30px;
+    padding-left: 80px;
+    background-color: #92623E;
+    color: #D5D2CB;
+  }
+  
+  .middle2 {
+    padding-left: 50px;
+    font-weight: bold;
+    color: #696969;
+  }
+  
+  #img2 {
+    cursor: pointer;
+    width: 30px;
+    opacity: 0.6;
+  }

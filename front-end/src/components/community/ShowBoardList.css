@@ -1,0 +1,12 @@
+.board_list {
+    margin: auto;
+    padding-top: 80px;
+    background-color: rgb(153, 153, 153);
+    text-align: center;
+    height: 80vh;
+    width: 800px;
+}
+
+.board_nav {
+    position: fixed;
+}

@@ -6,6 +6,7 @@ import com.secure6.hhm.dto.MemberDto;
 import com.secure6.hhm.dto.MemberLoginDto;
 import com.secure6.hhm.repository.MemberRepository;
 import com.secure6.hhm.repository.MemberRepositoryImpl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -19,7 +20,9 @@ public class MemberController {
     MemberDao memberDao = new MemberDao();
 
     @GetMapping("/login")
-    public LoginResponseDto MemberLogin(MemberLoginDto memberLogin) throws SQLException {
+    public ResponseEntity<LoginResponseDto> MemberLogin(MemberLoginDto memberLogin) throws SQLException {
+
+        System.out.println(memberLogin.getMemberId());
 
         String rs = memberDao.login(memberLogin);
 
@@ -28,12 +31,13 @@ public class MemberController {
         if(rs == "로그인성공") {
             loginResponseDto.setState(200);
             loginResponseDto.setRs(memberLogin.getMemberId());
+            return ResponseEntity.ok(loginResponseDto);
         }
         else {
             loginResponseDto.setState(500);
             loginResponseDto.setRs("로그인실패");
+            return ResponseEntity.status(500).body(loginResponseDto);
         }
-        return loginResponseDto;
     }
 
     @PostMapping("/register")
