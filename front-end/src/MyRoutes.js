@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Nav from "./components/Nav";
 import Login from "./components/login/Login";
 import Community from "./components/community/Community";
+import ShowContent from "./components/community/ShowContent";
 
 function MyRoutes() {
   const [isLogin, setIsLogin] = useState(false);
@@ -33,6 +34,7 @@ function MyRoutes() {
             />
           }
         />
+        <Route path="/showcontent/:id" element={<ShowContent />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

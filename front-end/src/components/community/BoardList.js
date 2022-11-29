@@ -9,7 +9,6 @@ const BoardList = () => {
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
-
       try {
         const res = await axios.get("http://localhost:8080/post");
         setBoardData(res.data);
@@ -21,6 +20,10 @@ const BoardList = () => {
     };
     loadData().then(() => console.log("success"));
   }, []);
+
+  if (!boardData) {
+    return null;
+  }
 
   return (
     <div>

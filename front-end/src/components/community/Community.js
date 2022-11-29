@@ -7,8 +7,8 @@ function Community(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLogin) navigate("/community", true);
-  }, []);
+    if (isLogin) navigate("/community", true);
+  });
 
   return (
     <>

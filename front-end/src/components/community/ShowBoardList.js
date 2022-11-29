@@ -19,7 +19,7 @@ const ShowBoardList = ({ boardData }) => {
           {boardData.map((boardData) => (
             <tr className="board_content" key={boardData.id}>
               <td id="head_text">{boardData.id}님</td>
-              <Link to="/boardcontent">
+              <Link to={`/showcontent/${boardData.id}`}>
                 <td id="board_text">{boardData.title}</td>
               </Link>
               <td id="board_text1">{boardData.writer}</td>
