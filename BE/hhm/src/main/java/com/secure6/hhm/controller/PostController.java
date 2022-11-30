@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Slf4j
-@Controller
+@RestController
 @RequestMapping("/post")
 public class PostController {
 
@@ -28,6 +28,8 @@ public class PostController {
 
     @GetMapping("/search")
     public ResponseEntity<List<PostDto>> search(@RequestParam(value = "word") String word) throws SQLException {
+
+        System.out.println(word);
 
         List<PostDto> result = postRepository.search(word);
 
