@@ -3,10 +3,23 @@
     padding-top: 80px;
     background-color: rgb(153, 153, 153);
     text-align: center;
-    height: 80vh;
+    height: 90vh;
     width: 800px;
 }
 
 .board_nav {
     position: fixed;
+}
+
+.search_input {
+    padding: 2px;
+    margin-right: 5px;
+    margin-top: 15px;
+    width: 50%;
+}
+
+.serach_submit {
+    position: absolute;
+    margin-top: 14px;
+    cursor: pointer;
 }

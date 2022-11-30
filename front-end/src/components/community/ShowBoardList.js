@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ShowBoardList.css";
 import Nav from "../Nav";
+import Search from "./Search";
 
 const ShowBoardList = ({ boardData }) => {
   return (
@@ -10,6 +11,7 @@ const ShowBoardList = ({ boardData }) => {
         <Nav />
       </div>
       <table className="board_list">
+        <Search />
         <tbody>
           <tr>
             <th>id</th>

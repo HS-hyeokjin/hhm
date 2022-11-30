@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Nav from "../Nav";
+import "./ShowContent.css";
 
 const ShowContent = ({ boardData }) => {
   const { id } = useParams();
@@ -23,11 +24,19 @@ const ShowContent = ({ boardData }) => {
   return (
     <div>
       <Nav />
-      <h1>글내용</h1>
-      <hr />
-      <h3>{data.id}</h3>
-      <h1>{data.title}</h1>
-      <h2>{data.content}</h2>
+      <div className="get_content">
+        <h1>Contents</h1>
+        <div className="title_box">
+          <h1>{data.title}</h1>
+        </div>
+        <div className="content_box">
+          <h2>{data.content}</h2>
+        </div>
+
+        <div className="button">
+          <p>수정</p>
+        </div>
+      </div>
     </div>
   );
 };
